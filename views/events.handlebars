@@ -1,0 +1,20 @@
+<section id="events" class="container">
+    <h1>All Events</h1>
+
+    {{#each events}}
+      <div class="event">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+      <ul>
+        <li>Details: {{details}}</li>
+        <li><a href="mailto:{{contact_email}}" class="btn btn-reverse">Contact</a></li>
+      </ul>
+      <div class="notes">
+        <small>Notes: <span>{{notes}}</span></small>
+      </div>
+    </div>
+    {{else}}
+      <p>No events available</p>
+    {{/each}}
+    
+  </section>

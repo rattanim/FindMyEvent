@@ -1,0 +1,37 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Add A Event</h1>
+      <p>Your contact email will be shared with registered users to inquire about your event</p>
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/events/add" method="POST">
+        <div class="input-group">
+          <label for="title">Event Title</label>
+          <input type="text" name="title" id="title" class="input-box" placeholder="eg. Birthday Party"
+            maxlength="100" value={{title}}>
+        </div>
+        <div class="input-group">
+          <label for="notes">Notes</label>
+          <input type="text" name="notes" id="notes" class="input-box" placeholder="eg. Family Friendly"
+          maxlength="100" value={{notes}}>
+        </div>
+        <div class="input-group">
+          <label for="details">Details (When & Where?)</label>
+          <input type="text" name="details" id="details" class="input-box" placeholder="eg. My House, 10:30pm, Contact Me For Directions" value={{details}}>
+        </div>
+        <div class="input-group">
+          <label for="description">Event Description</label>
+          <textarea name="description" id="description" class="input-box" placeholder="Describe Event"
+            rows="10">{{description}}</textarea>
+        </div>
+        <div class="input-group">
+          <label for="contact_email">Contact Email</label>
+          <input type="email" name="contact_email" id="contactemail" class="input-box" placeholder="Enter an email" value={{contact_email}}>
+        </div>
+        <input type="submit" value="Add Event" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>
